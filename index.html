@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Stem Splitter – runs in your browser</title>
+<style>
+:root{--bg:#0f1115;--card:#181b22;--line:#2a2f3a;--tx:#e8eaf0;--mut:#8b92a3;--ac:#7c5cff}
+@media(prefers-color-scheme:light){:root{--bg:#f6f7fb;--card:#fff;--line:#dfe2ea;--tx:#1b1e27;--mut:#667085}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px system-ui,sans-serif}
+main{max-width:820px;margin:0 auto;padding:40px 20px}h1{margin:0 0 6px}p.s{color:var(--mut);margin:0 0 24px}
+#drop{border:2px dashed var(--line);border-radius:14px;padding:48px 20px;text-align:center;cursor:pointer;background:var(--card);transition:.15s}
+#drop.over{border-color:var(--ac)}#drop b{color:var(--ac)}
+#prog{display:none;margin-top:24px}.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+#fill{height:100%;width:0;background:var(--ac);transition:width .3s}#stage{color:var(--mut);margin-top:8px;font-size:14px}
+#err{color:#e5484d;margin-top:12px}#res{display:none;margin-top:28px}
+.bar2{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+button,a.b{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:9px 16px;font:inherit;cursor:pointer;text-decoration:none;font-size:14px}
+button.g,a.g{background:transparent;border:1px solid var(--line);color:var(--tx)}
+.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.st h3{margin:0;width:90px;font-size:15px}.st audio{flex:1;min-width:200px;height:36px}.st.m{opacity:.45}
+small{color:var(--mut)}
+</style></head><body><main>
+<h1>Stem Splitter</h1>
+<p class="s">Your audio never leaves your computer. The AI runs inside this browser tab. Output: Vocal, Drum, Bass, Other, Ambience, Music.</p>
+<div id="drop"><input id="file" type="file" accept="audio/*,video/*" hidden>
+<p><b>Click to choose</b> or drop an audio file here<br><small>mp3 · wav · flac · m4a · ogg · best with songs under ~8 minutes</small></p></div>
+<div id="prog"><div class="bar"><div id="fill"></div></div><div id="stage"></div></div><div id="err"></div>
+<div id="res"><div class="bar2"><button id="pp">▶ Play all</button><button id="zip" class="g">⬇ Download all (.zip)</button>
+<button class="g" onclick="location.reload()">New file</button></div><div id="list"></div></div>
+<p><small>First use downloads a ~170 MB AI model once (then it is cached). Works best in recent Chrome or Edge; a GPU makes it much faster.</small></p>
+<script type="module" src="app.js"></script></main></body></html>
